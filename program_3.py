@@ -31,7 +31,7 @@ def sum_numbers_from_file():
 
             if count > 0:
                 #Needed to add commas for the sum otherwise it would keep failing
-                formatted_total = "{:,.2f}".format(total)
+                formatted_total = "{:.2f}".format(total)
                 print(f"Total sum of valid numbers: {formatted_total}")
             else:
                 print("No valid numbers found to sum.")
