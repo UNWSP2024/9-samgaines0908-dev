@@ -29,7 +29,7 @@ def sum_numbers_from_file():
 
             if count > 0:
                 print(f"total number of numbers is: {total}")
-            else:
+            else:    #
                 print('Sorry you have entered an invalid number.')
             # This handles the IOError
     except IOError:
