@@ -13,10 +13,12 @@
 #Date: 3/27/2026
 #Title: Average Numbers
 
+
+
 def sum_numbers_from_file():
     ######################
     try:
-        with open('names.txt', 'r') as file:
+        with open('numbers.txt.', 'r') as file:
             total = 0
             count=0
             for line in file:
