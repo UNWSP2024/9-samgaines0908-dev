@@ -18,13 +18,19 @@ def sum_numbers_from_file():
     try:
         with open('names.txt', 'r') as file:
             total = 0
+            count=0
             for line in file:
-                try:
-                    total += int(line)
+                try:    # This changes the value into an integer
+                    number = int(line.strip())
+                    total+= number
+                    count+=1
                 except ValueError:   #handles ValueError
-                    print(f"{line} is not a valid number please convert to a valid number ")
-                    return
-            print(f"{total} numbers added to the file")
+                    print(f"Sorry: '{line.strip()}' is not a valid number please convert to a valid number ")
+
+            if count > 0:
+                print(f"total number of numbers is: {total}")
+            else:
+                print('Sorry you have entered an invalid number.')
             # This handles the IOError
     except IOError:
         print("Error reading the file.")
@@ -36,3 +42,4 @@ def sum_numbers_from_file():
 # You don't need to change anything below this line:
 if __name__ == '__main__':
     sum_numbers_from_file()
+
