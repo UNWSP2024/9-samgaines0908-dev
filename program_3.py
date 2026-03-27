@@ -28,10 +28,12 @@ def sum_numbers_from_file():
                     print(f"Sorry: '{line.strip()}' is not a valid number please convert to a valid number ")
 
             if count > 0:
-                print(f"total number of numbers is: {total}")
-            else:    #
-                print('Sorry you have entered an invalid number.')
-            # This handles the IOError
+                #Needed to add commas for the sum otherwise it would keep failing
+                formatted_total = "{:,.2f}".format(total)
+                print(f"Total sum of valid numbers: {formatted_total}")
+            else:
+                print("No valid numbers found to sum.")
+                # This handles the IOError
     except IOError:
         print("Error reading the file.")
     except Exception as e:
